@@ -26,9 +26,9 @@ public class AestheticWindows
     public static final String MOD_ID = "aestheticwindows";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public AestheticWindows(FMLJavaModLoadingContext context)
+    public AestheticWindows()
     {
-        IEventBus modEventBus = context.getModEventBus();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
 
