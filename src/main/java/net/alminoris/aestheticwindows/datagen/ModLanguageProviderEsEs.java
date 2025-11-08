@@ -1,7 +1,7 @@
 package net.alminoris.aestheticwindows.datagen;
 
 import net.alminoris.aestheticwindows.AestheticWindows;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
 import java.util.LinkedHashMap;
@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class ModLanguageProviderEsEs extends LanguageProvider
 {
-    public ModLanguageProviderEsEs(PackOutput output)
+    public ModLanguageProviderEsEs(DataGenerator output)
     {
         super(output, AestheticWindows.MOD_ID, "es_es");
     }

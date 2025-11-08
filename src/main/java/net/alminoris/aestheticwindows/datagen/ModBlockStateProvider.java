@@ -5,7 +5,7 @@ import net.alminoris.aestheticwindows.block.ModBlocks;
 import net.alminoris.aestheticwindows.util.helper.BlockSetsHelper;
 import net.alminoris.aestheticwindows.util.helper.ModJsonHelper;
 import net.alminoris.aestheticwindows.util.helper.ModJsonTemplates;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -17,7 +17,7 @@ import java.util.Arrays;
 
 public class ModBlockStateProvider extends BlockStateProvider
 {
-    public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper)
+    public ModBlockStateProvider(DataGenerator output, ExistingFileHelper exFileHelper)
     {
         super(output, AestheticWindows.MOD_ID, exFileHelper);
     }

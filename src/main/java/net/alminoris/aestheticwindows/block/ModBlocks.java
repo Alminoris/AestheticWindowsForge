@@ -2,6 +2,7 @@ package net.alminoris.aestheticwindows.block;
 
 import net.alminoris.aestheticwindows.AestheticWindows;
 import net.alminoris.aestheticwindows.block.custom.*;
+import net.alminoris.aestheticwindows.item.ModItemGroups;
 import net.alminoris.aestheticwindows.item.ModItems;
 import net.alminoris.aestheticwindows.util.helper.BlockSetsHelper;
 import net.minecraft.world.item.BlockItem;
@@ -115,7 +116,7 @@ public class ModBlocks
 
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block)
     {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(ModItemGroups.AWS_TAB)));
     }
 
     public static void register(IEventBus eventBus)

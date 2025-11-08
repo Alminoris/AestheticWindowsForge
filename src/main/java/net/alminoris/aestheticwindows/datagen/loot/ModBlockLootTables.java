@@ -2,8 +2,7 @@ package net.alminoris.aestheticwindows.datagen.loot;
 
 import net.alminoris.aestheticwindows.block.ModBlocks;
 import net.alminoris.aestheticwindows.util.helper.BlockSetsHelper;
-import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -11,15 +10,10 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
 
-public class ModBlockLootTables extends BlockLootSubProvider
+public class ModBlockLootTables extends BlockLoot
 {
-    public ModBlockLootTables()
-    {
-        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
-    }
-
     @Override
-    protected void generate()
+    protected void addTables()
     {
         for(String name : BlockSetsHelper.getWoodsNStones())
         {

@@ -3,7 +3,7 @@ package net.alminoris.aestheticwindows.datagen;
 import net.alminoris.aestheticwindows.AestheticWindows;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -21,22 +21,20 @@ public class DataGenerators
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event)
     {
-        DataGenerator generator = event.getGenerator();
-        PackOutput packOutput = generator.getPackOutput();
+        DataGenerator packOutput = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
+        packOutput.addProvider(event.includeServer(), new ModLootTableProvider(packOutput));
+        packOutput.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
 
-        generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+        packOutput.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
+        packOutput.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
 
-        generator.addProvider(event.includeClient(), new ModLanguageProviderEnUs(packOutput));
-        generator.addProvider(event.includeClient(), new ModLanguageProviderDeDe(packOutput));
-        generator.addProvider(event.includeClient(), new ModLanguageProviderEsEs(packOutput));
-        generator.addProvider(event.includeClient(), new ModLanguageProviderFrFr(packOutput));
-        generator.addProvider(event.includeClient(), new ModLanguageProviderRuRu(packOutput));
-        generator.addProvider(event.includeClient(), new ModLanguageProviderUkUa(packOutput));
+        packOutput.addProvider(event.includeClient(), new ModLanguageProviderEnUs(packOutput));
+        packOutput.addProvider(event.includeClient(), new ModLanguageProviderDeDe(packOutput));
+        packOutput.addProvider(event.includeClient(), new ModLanguageProviderEsEs(packOutput));
+        packOutput.addProvider(event.includeClient(), new ModLanguageProviderFrFr(packOutput));
+        packOutput.addProvider(event.includeClient(), new ModLanguageProviderRuRu(packOutput));
+        packOutput.addProvider(event.includeClient(), new ModLanguageProviderUkUa(packOutput));
     }
 }

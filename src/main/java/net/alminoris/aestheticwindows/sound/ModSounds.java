@@ -19,7 +19,7 @@ public class ModSounds
 
     private static RegistryObject<SoundEvent> registerSound(String name) {
         return SOUND_EVENTS.register(name,
-                () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(AestheticWindows.MOD_ID, name)));
+                () -> new SoundEvent(ResourceLocation.fromNamespaceAndPath(AestheticWindows.MOD_ID, name)));
     }
 
     public static void register(IEventBus eventBus)

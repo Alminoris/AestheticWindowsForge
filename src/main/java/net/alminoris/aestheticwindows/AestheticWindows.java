@@ -10,11 +10,9 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -34,13 +32,12 @@ public class AestheticWindows
 
         modEventBus.addListener(this::commonSetup);
 
+        ModItemGroups.registerModItemGroups();
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModSounds.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
-
-        modEventBus.addListener(this::addCreative);
 
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -48,198 +45,6 @@ public class AestheticWindows
     private void commonSetup(final FMLCommonSetupEvent event)
     {
 
-    }
-
-    private void addCreative(CreativeModeTabEvent.BuildContents entries)
-    {
-        if (entries.getTab() == ModItemGroups.AWS_TAB)
-        {
-            for(String name : BlockSetsHelper.WOODS)
-            {
-                entries.accept(ModBlocks.WINDOWS.get(name).get());
-                entries.accept(ModBlocks.VERTICAL_WINDOWS.get(name).get());
-                entries.accept(ModBlocks.FOURPANE_WINDOWS.get(name).get());
-                entries.accept(ModBlocks.VERTICAL_FOURPANE_WINDOWS.get(name).get());
-            }
-
-            if (ModList.get().isLoaded("arborealnature"))
-            {
-                for(String name : BlockSetsHelper.EXTRA_WOODS_AN)
-                {
-                    entries.accept(ModBlocks.WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_WINDOWS.get(name).get());
-                }
-            }
-
-            if (ModList.get().isLoaded("wildfields"))
-            {
-                for(String name : BlockSetsHelper.EXTRA_WOODS_WF)
-                {
-                    entries.accept(ModBlocks.WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_WINDOWS.get(name).get());
-                }
-            }
-
-            if (ModList.get().isLoaded("whisperleaftrees"))
-            {
-                for(String name : BlockSetsHelper.WT_WOOD_NAMES)
-                {
-                    entries.accept(ModBlocks.WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_WINDOWS.get(name).get());
-                }
-            }
-
-            if (ModList.get().isLoaded("silverwoodtrees"))
-            {
-                for(String name : BlockSetsHelper.ST_WOOD_NAMES)
-                {
-                    entries.accept(ModBlocks.WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_WINDOWS.get(name).get());
-                }
-            }
-
-            if (ModList.get().isLoaded("missingtrees"))
-            {
-                for(String name : BlockSetsHelper.MT_WOOD_NAMES)
-                {
-                    entries.accept(ModBlocks.WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_WINDOWS.get(name).get());
-                }
-            }
-
-            if (ModList.get().isLoaded("natures_spirit"))
-            {
-                for(String name : BlockSetsHelper.NSS_WOOD_NAMES)
-                {
-                    entries.accept(ModBlocks.WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_WINDOWS.get(name).get());
-                }
-            }
-
-            for(String name : BlockSetsHelper.STONES)
-            {
-                entries.accept(ModBlocks.WINDOWS.get(name).get());
-                entries.accept(ModBlocks.VERTICAL_WINDOWS.get(name).get());
-                entries.accept(ModBlocks.FOURPANE_WINDOWS.get(name).get());
-                entries.accept(ModBlocks.VERTICAL_FOURPANE_WINDOWS.get(name).get());
-            }
-
-            if (ModList.get().isLoaded("wildfields"))
-            {
-                for(String name : BlockSetsHelper.EXTRA_STONES_WF)
-                {
-                    entries.accept(ModBlocks.WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_WINDOWS.get(name).get());
-                }
-            }
-
-            for(String name : BlockSetsHelper.WOODS)
-            {
-                entries.accept(ModBlocks.EMPTY_WINDOWS.get(name).get());
-                entries.accept(ModBlocks.VERTICAL_EMPTY_WINDOWS.get(name).get());
-                entries.accept(ModBlocks.FOURPANE_EMPTY_WINDOWS.get(name).get());
-                entries.accept(ModBlocks.VERTICAL_FOURPANE_EMPTY_WINDOWS.get(name).get());
-            }
-
-            if (ModList.get().isLoaded("arborealnature"))
-            {
-                for(String name : BlockSetsHelper.EXTRA_WOODS_AN)
-                {
-                    entries.accept(ModBlocks.EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_EMPTY_WINDOWS.get(name).get());
-                }
-            }
-
-            if (ModList.get().isLoaded("wildfields"))
-            {
-                for(String name : BlockSetsHelper.EXTRA_WOODS_WF)
-                {
-                    entries.accept(ModBlocks.EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_EMPTY_WINDOWS.get(name).get());
-                }
-            }
-
-            if (ModList.get().isLoaded("whisperleaftrees"))
-            {
-                for(String name : BlockSetsHelper.WT_WOOD_NAMES)
-                {
-                    entries.accept(ModBlocks.EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_EMPTY_WINDOWS.get(name).get());
-                }
-            }
-
-            if (ModList.get().isLoaded("silverwoodtrees"))
-            {
-                for(String name : BlockSetsHelper.ST_WOOD_NAMES)
-                {
-                    entries.accept(ModBlocks.EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_EMPTY_WINDOWS.get(name).get());
-                }
-            }
-
-            if (ModList.get().isLoaded("missingtrees"))
-            {
-                for(String name : BlockSetsHelper.MT_WOOD_NAMES)
-                {
-                    entries.accept(ModBlocks.EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_EMPTY_WINDOWS.get(name).get());
-                }
-            }
-
-            if (ModList.get().isLoaded("natures_spirit"))
-            {
-                for(String name : BlockSetsHelper.NSS_WOOD_NAMES)
-                {
-                    entries.accept(ModBlocks.EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_EMPTY_WINDOWS.get(name).get());
-                }
-            }
-
-            for(String name : BlockSetsHelper.STONES)
-            {
-                entries.accept(ModBlocks.EMPTY_WINDOWS.get(name).get());
-                entries.accept(ModBlocks.VERTICAL_EMPTY_WINDOWS.get(name).get());
-                entries.accept(ModBlocks.FOURPANE_EMPTY_WINDOWS.get(name).get());
-                entries.accept(ModBlocks.VERTICAL_FOURPANE_EMPTY_WINDOWS.get(name).get());
-            }
-
-            if (ModList.get().isLoaded("wildfields"))
-            {
-                for(String name : BlockSetsHelper.EXTRA_STONES_WF)
-                {
-                    entries.accept(ModBlocks.EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.FOURPANE_EMPTY_WINDOWS.get(name).get());
-                    entries.accept(ModBlocks.VERTICAL_FOURPANE_EMPTY_WINDOWS.get(name).get());
-                }
-            }
-        }
     }
 
     @SubscribeEvent
