@@ -17,9 +17,7 @@ public class ModItemModelProvider extends ItemModelProvider
     }
 
     @Override
-    protected void registerModels()
-    {
-    }
+    protected void registerModels() {}
 
     private ItemModelBuilder generatedItem(RegistryObject<Item> item)
     {
