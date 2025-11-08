@@ -30,7 +30,7 @@ public class ModItemGroups
     public static List<String> NSS_WOOD_NAMES = List.of("aspen_nss", "cedar_nss", "coconut_nss", "cypress_nss", "fir_nss", "ghaf_nss",
             "larch_nss", "mahogany_nss", "maple_nss", "olive_nss", "palo_verde_nss", "redwood_nss", "saxaul_nss", "sugi_nss", "willow_nss", "wisteria_nss");
 
-    public static final CreativeModeTab AWS_TAB = new CreativeModeTab(AestheticWindows.MOD_ID + ".astairstab") {
+    public static final CreativeModeTab AWS_TAB = new CreativeModeTab(AestheticWindows.MOD_ID + ".awstab") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(ModBlocks.WINDOWS.get("oak").get().asItem());
@@ -38,7 +38,7 @@ public class ModItemGroups
 
         @Override
         public Component getDisplayName() {
-            return Component.translatable("itemGroup." + AestheticWindows.MOD_ID + ".astairstab");
+            return Component.translatable("itemGroup." + AestheticWindows.MOD_ID + ".awstab");
         }
     };
 
