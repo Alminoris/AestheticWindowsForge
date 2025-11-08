@@ -3,6 +3,7 @@ package net.alminoris.aestheticwindows.item;
 import net.alminoris.aestheticwindows.AestheticWindows;
 import net.alminoris.aestheticwindows.block.ModBlocks;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.ModList;
@@ -38,7 +39,7 @@ public class ModItemGroups
 
         @Override
         public Component getDisplayName() {
-            return Component.translatable("itemGroup." + AestheticWindows.MOD_ID + ".astairstab");
+            return new TranslatableComponent("itemGroup." + AestheticWindows.MOD_ID + ".astairstab");
         }
     };
 
