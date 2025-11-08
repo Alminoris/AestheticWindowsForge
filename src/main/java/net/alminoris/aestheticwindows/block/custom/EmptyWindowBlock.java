@@ -4,6 +4,7 @@ import net.alminoris.aestheticwindows.block.ModBlocks;
 import net.alminoris.aestheticwindows.util.helper.VoxelShapeHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -44,7 +45,7 @@ public class EmptyWindowBlock extends BaseWindowBlock
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit)
+    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit)
     {
         ItemStack stack = player.getMainHandItem();
         if (!world.isClientSide && !getMaterialName().isEmpty() && stack.is(Blocks.GLASS_PANE.asItem()))
@@ -60,7 +61,7 @@ public class EmptyWindowBlock extends BaseWindowBlock
             return InteractionResult.SUCCESS;
         }
 
-        return super.useWithoutItem(state, world, pos, player, hit);
+        return super.use(state, world, pos, player, hand, hit);
     }
 
     private String getMaterialName()

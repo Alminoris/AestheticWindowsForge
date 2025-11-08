@@ -8523,7 +8523,7 @@ public class ModJsonTemplates
               },
               "result": {
                 "count": COUNT,
-                "id": "aestheticwindows:OUTPUT_NAME"
+                "item": "aestheticwindows:OUTPUT_NAME"
               }
             }
             """;
@@ -8542,7 +8542,7 @@ public class ModJsonTemplates
               ],
               "result": {
                 "count": 1,
-                "id": "aestheticwindows:OUTPUT_NAME"
+                "item": "aestheticwindows:OUTPUT_NAME"
               }
             }
             """;

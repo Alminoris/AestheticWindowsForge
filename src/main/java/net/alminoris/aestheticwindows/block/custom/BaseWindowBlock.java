@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
@@ -110,7 +111,7 @@ public class BaseWindowBlock extends YAxisRotatedBlock
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit)
+    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit)
     {
         if (!player.getMainHandItem().isEmpty() || state.getValue(VARIANT) == Variant.CENTER)
         {
@@ -146,7 +147,7 @@ public class BaseWindowBlock extends YAxisRotatedBlock
     }
 
     @Override
-    protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos)
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos)
     {
         super.updateShape(state, direction, neighborState, world, pos, neighborPos);
 
@@ -154,7 +155,7 @@ public class BaseWindowBlock extends YAxisRotatedBlock
     }
 
     @Override
-    protected void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean notify)
+    public void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean notify)
     {
         super.onPlace(state, world, pos, oldState, notify);
         updateSurroundingGardenWindows(world, pos);

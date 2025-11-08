@@ -26,7 +26,7 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoodsNStones())
         {
-            put(name, registerBlock("window_"+name, () -> new WindowBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS_PANE))));
+            put(name, registerBlock("window_"+name, () -> new WindowBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE))));
         }
     }};
 
@@ -34,7 +34,7 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoodsNStones())
         {
-            put(name, registerBlock("vertical_window_"+name, () -> new WindowVerticalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS_PANE))));
+            put(name, registerBlock("vertical_window_"+name, () -> new WindowVerticalBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE))));
         }
     }};
 
@@ -42,7 +42,7 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoodsNStones())
         {
-            put(name, registerBlock("fourpane_window_"+name, () -> new FourpaneWindowBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS_PANE))));
+            put(name, registerBlock("fourpane_window_"+name, () -> new FourpaneWindowBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE))));
         }
     }};
 
@@ -50,7 +50,7 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoodsNStones())
         {
-            put(name, registerBlock("vertical_fourpane_window_"+name, () -> new FourpaneWindowVerticalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS_PANE))));
+            put(name, registerBlock("vertical_fourpane_window_"+name, () -> new FourpaneWindowVerticalBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE))));
         }
     }};
 
@@ -58,12 +58,12 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoods())
         {
-            put(name, registerBlock("empty_window_"+name, () -> new EmptyWindowBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))));
+            put(name, registerBlock("empty_window_"+name, () -> new EmptyWindowBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD))));
         }
 
         for(String name : BlockSetsHelper.getStones())
         {
-            put(name, registerBlock("empty_window_"+name, () -> new EmptyWindowBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))));
+            put(name, registerBlock("empty_window_"+name, () -> new EmptyWindowBlock(BlockBehaviour.Properties.copy(Blocks.STONE))));
         }
     }};
 
@@ -71,12 +71,12 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoods())
         {
-            put(name, registerBlock("vertical_empty_window_"+name, () -> new EmptyWindowVerticalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))));
+            put(name, registerBlock("vertical_empty_window_"+name, () -> new EmptyWindowVerticalBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD))));
         }
 
         for(String name : BlockSetsHelper.getStones())
         {
-            put(name, registerBlock("vertical_empty_window_"+name, () -> new EmptyWindowVerticalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))));
+            put(name, registerBlock("vertical_empty_window_"+name, () -> new EmptyWindowVerticalBlock(BlockBehaviour.Properties.copy(Blocks.STONE))));
         }
     }};
 
@@ -84,12 +84,12 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoods())
         {
-            put(name, registerBlock("fourpane_empty_window_"+name, () -> new FourpaneEmptyWindowBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))));
+            put(name, registerBlock("fourpane_empty_window_"+name, () -> new FourpaneEmptyWindowBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD))));
         }
 
         for(String name : BlockSetsHelper.getStones())
         {
-            put(name, registerBlock("fourpane_empty_window_"+name, () -> new FourpaneEmptyWindowBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))));
+            put(name, registerBlock("fourpane_empty_window_"+name, () -> new FourpaneEmptyWindowBlock(BlockBehaviour.Properties.copy(Blocks.STONE))));
         }
     }};
 
@@ -97,12 +97,12 @@ public class ModBlocks
     {{
         for(String name : BlockSetsHelper.getWoods())
         {
-            put(name, registerBlock("vertical_fourpane_empty_window_"+name, () -> new FourpaneEmptyWindowVerticalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))));
+            put(name, registerBlock("vertical_fourpane_empty_window_"+name, () -> new FourpaneEmptyWindowVerticalBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD))));
         }
 
         for(String name : BlockSetsHelper.getStones())
         {
-            put(name, registerBlock("vertical_fourpane_empty_window_"+name, () -> new FourpaneEmptyWindowVerticalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))));
+            put(name, registerBlock("vertical_fourpane_empty_window_"+name, () -> new FourpaneEmptyWindowVerticalBlock(BlockBehaviour.Properties.copy(Blocks.STONE))));
         }
     }};
 
