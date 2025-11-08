@@ -41,7 +41,7 @@ public class ModLanguageProviderEnUs extends LanguageProvider
             add("block." + AestheticWindows.MOD_ID + "." + path, displayName);
         }
 
-        add("itemgroup.awstab","Aesthetic Windows");
+        add("itemGroup.aestheticwindows.awstab","Aesthetic Windows");
     }
 
     public static String movePrefix(String input, String[] arr)

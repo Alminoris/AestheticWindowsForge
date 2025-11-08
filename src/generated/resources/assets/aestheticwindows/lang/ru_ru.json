@@ -687,5 +687,5 @@
   "block.aestheticwindows.window_willow_nss": "Окно из ивы",
   "block.aestheticwindows.window_wisteria_nss": "Окно из глицинии",
   "block.aestheticwindows.window_yew": "Окно из тиса",
-  "itemgroup.awstab": "Aesthetic Windows"
+  "itemGroup.aestheticwindows.awstab": "Aesthetic Windows"
 }

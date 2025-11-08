@@ -687,5 +687,5 @@
   "block.aestheticwindows.window_willow_nss": "Fenster aus Weide",
   "block.aestheticwindows.window_wisteria_nss": "Fenster aus Glyzinie",
   "block.aestheticwindows.window_yew": "Fenster aus Eibe",
-  "itemgroup.awstab": "Aesthetic Windows"
+  "itemGroup.aestheticwindows.awstab": "Aesthetic Windows"
 }

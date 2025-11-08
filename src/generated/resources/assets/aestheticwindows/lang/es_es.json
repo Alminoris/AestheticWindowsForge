@@ -687,5 +687,5 @@
   "block.aestheticwindows.window_willow_nss": "Ventana de sauce",
   "block.aestheticwindows.window_wisteria_nss": "Ventana de glicinia",
   "block.aestheticwindows.window_yew": "Ventana de tejo",
-  "itemgroup.awstab": "Aesthetic Windows"
+  "itemGroup.aestheticwindows.awstab": "Aesthetic Windows"
 }

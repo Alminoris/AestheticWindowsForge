@@ -139,6 +139,6 @@ public class ModLanguageProviderFrFr extends LanguageProvider
             }
         }
 
-        add("itemgroup.awstab","Aesthetic Windows");
+        add("itemGroup.aestheticwindows.awstab","Aesthetic Windows");
     }
 }

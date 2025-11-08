@@ -687,5 +687,5 @@
   "block.aestheticwindows.window_willow_nss": "Fenêtre en saule",
   "block.aestheticwindows.window_wisteria_nss": "Fenêtre en glycine",
   "block.aestheticwindows.window_yew": "Fenêtre en if",
-  "itemgroup.awstab": "Aesthetic Windows"
+  "itemGroup.aestheticwindows.awstab": "Aesthetic Windows"
 }

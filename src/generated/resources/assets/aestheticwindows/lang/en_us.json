@@ -1690,5 +1690,5 @@
   "block.aestheticwindows.yellow_wool": "Yellow Wool",
   "block.aestheticwindows.zombie_head": "Zombie Head",
   "block.aestheticwindows.zombie_wall_head": "Zombie Wall Head",
-  "itemgroup.awstab": "Aesthetic Windows"
+  "itemGroup.aestheticwindows.awstab": "Aesthetic Windows"
 }
